@@ -13,15 +13,16 @@ from .serializers import (
 @api_view(['GET'])
 def api_root(request, format=None):
     """
-    Root API endpoint that lists all available endpoints
+    Root API endpoint that lists all available endpoints with Codespace URL suffix
     """
+    base_url = 'http://bug-free-giggle-x94pjxpqwqq3x97-8000.app.github.dev/'
     return Response({
-        'users': reverse('user-list', request=request, format=format),
-        'profiles': reverse('profile-list', request=request, format=format),
-        'teams': reverse('team-list', request=request, format=format),
-        'activities': reverse('activity-list', request=request, format=format),
-        'leaderboard': reverse('leaderboard-list', request=request, format=format),
-        'workouts': reverse('workout-list', request=request, format=format),
+        'users': base_url + 'api/users/?format=api',
+        'profiles': base_url + 'api/profiles/?format=api',
+        'teams': base_url + 'api/teams/?format=api',
+        'activities': base_url + 'api/activities/?format=api',
+        'leaderboard': base_url + 'api/leaderboard/?format=api',
+        'workouts': base_url + 'api/workouts/?format=api',
     })
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
