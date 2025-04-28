@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Workouts() {
+  const [workouts, setWorkouts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://congenial-robot-pwrx4jxpp9c6vjv-8000.app.github.dev/api/workouts/')
+      .then(response => response.json())
+      .then(data => setWorkouts(data))
+      .catch(error => console.error('Error fetching workouts:', error));
+  }, []);
+
   return (
     <div>
       <h1 className="text-center">Workouts</h1>
@@ -12,14 +21,12 @@ function Workouts() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Yoga</td>
-            <td>Relaxing and stretching exercises</td>
-          </tr>
-          <tr>
-            <td>HIIT</td>
-            <td>High-intensity interval training</td>
-          </tr>
+          {workouts.map(workout => (
+            <tr key={workout._id}>
+              <td>{workout.name}</td>
+              <td>{workout.description}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
