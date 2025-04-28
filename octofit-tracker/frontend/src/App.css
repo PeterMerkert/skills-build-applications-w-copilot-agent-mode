@@ -1,9 +1,73 @@
+body {
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333; /* Dark text color */
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #4caf50; /* Green navigation menu */
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #ffeb3b; /* Yellow on hover */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #4caf50; /* Green headings */
+}
+
+button {
+  background-color: #4caf50; /* Green buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table th {
+  background-color: #4caf50; /* Green table headers */
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+table tr:hover {
+  background-color: #ddd; /* Darker gray on hover */
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 50px;
   pointer-events: none;
 }
 
@@ -25,7 +89,11 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #4caf50; /* Green links */
+}
+
+.App-link:hover {
+  color: #45a049; /* Darker green on hover */
 }
 
 @keyframes App-logo-spin {

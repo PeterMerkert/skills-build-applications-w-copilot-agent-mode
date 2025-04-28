@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function Teams() {
-  const [teams, setTeams] = useState([]);
-
-  useEffect(() => {
-    fetch('https://bug-free-giggle-x94pjxpqwqq3x97-8000.app.github.dev/api/teams/')
-      .then(response => response.json())
-      .then(data => setTeams(data))
-      .catch(error => console.error('Error fetching teams:', error));
-  }, []);
-
   return (
     <div>
-      <h1>Teams</h1>
-      <ul>
-        {teams.map(team => (
-          <li key={team._id}>{team.name}</li>
-        ))}
-      </ul>
+      <h1 className="text-center">Teams</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Team Name</th>
+            <th>Members</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Team Alpha</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Team Beta</td>
+            <td>4</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

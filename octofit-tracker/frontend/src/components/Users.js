@@ -12,12 +12,23 @@ function Users() {
 
   return (
     <div>
-      <h1>Users</h1>
-      <ul>
-        {users.map(user => (
-          <li key={user._id}>{user.username} - {user.email}</li>
-        ))}
-      </ul>
+      <h1 className="text-center">Users</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user._id}>
+              <td>{user.username}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

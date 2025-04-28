@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function Workouts() {
-  const [workouts, setWorkouts] = useState([]);
-
-  useEffect(() => {
-    fetch('https://bug-free-giggle-x94pjxpqwqq3x97-8000.app.github.dev/api/workouts/')
-      .then(response => response.json())
-      .then(data => setWorkouts(data))
-      .catch(error => console.error('Error fetching workouts:', error));
-  }, []);
-
   return (
     <div>
-      <h1>Workouts</h1>
-      <ul>
-        {workouts.map(workout => (
-          <li key={workout._id}>{workout.name} - {workout.description}</li>
-        ))}
-      </ul>
+      <h1 className="text-center">Workouts</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Workout</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Yoga</td>
+            <td>Relaxing and stretching exercises</td>
+          </tr>
+          <tr>
+            <td>HIIT</td>
+            <td>High-intensity interval training</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
