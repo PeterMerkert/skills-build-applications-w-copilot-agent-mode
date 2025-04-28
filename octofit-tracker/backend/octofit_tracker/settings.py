@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-zk5j60b*ri_kz=w!w$xt+ddni7s-9xj*^w32k@gw0%06t=$ah+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.app.github.dev']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -144,4 +144,7 @@ REST_FRAMEWORK = {
 }
 
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True  # In production, specify specific origins
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_METHODS = ['*']
